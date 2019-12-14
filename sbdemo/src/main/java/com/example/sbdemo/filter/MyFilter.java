@@ -9,6 +9,7 @@ import javax.servlet.ServletException;
 import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
 import javax.servlet.annotation.WebFilter;
+import javax.servlet.http.HttpServletRequest;
 
 
 @WebFilter(filterName="myFilter",urlPatterns="/*")
@@ -24,7 +25,9 @@ public class MyFilter implements Filter{
 	public void doFilter(ServletRequest arg0, ServletResponse arg1, FilterChain arg2)
 			throws IOException, ServletException {
 		// TODO Auto-generated method stub
-		System.out.println(">>>>>>>>>>>..");
+		HttpServletRequest request = (HttpServletRequest)arg0;
+		String requesturi = request.getRequestURI();
+		System.out.println(">>>>>>>>>>>.."+requesturi);
 		arg2.doFilter(arg0, arg1);
 	}
 

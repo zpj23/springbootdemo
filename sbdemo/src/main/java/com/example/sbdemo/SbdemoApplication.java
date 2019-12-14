@@ -6,7 +6,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.web.servlet.ServletComponentScan;
+import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -15,7 +17,7 @@ import org.springframework.web.bind.annotation.RestController;
 @ServletComponentScan
 @EnableTransactionManagement(proxyTargetClass = true)
 @MapperScan("com.example.sbdemo.mybatisTest.dao")
-public class SbdemoApplication {
+public class SbdemoApplication extends SpringBootServletInitializer{
 	
 	@Value("${author.name}")
 	private String name;
@@ -37,4 +39,10 @@ public class SbdemoApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(SbdemoApplication.class, args);
 	}
+	@Override
+	protected SpringApplicationBuilder configure(SpringApplicationBuilder builder) {
+		return builder.sources(this.getClass());
+//		return super.configure(builder);
+	}
+	
 }

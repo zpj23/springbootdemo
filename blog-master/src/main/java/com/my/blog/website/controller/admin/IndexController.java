@@ -48,6 +48,7 @@ public class IndexController extends BaseController {
 
     /**
      * 页面跳转
+     * 或者空，或者index 都能跳转该方法
      * @return
      */
     @GetMapping(value = {"","/index"})

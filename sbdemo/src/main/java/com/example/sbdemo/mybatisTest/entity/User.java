@@ -1,10 +1,9 @@
 package com.example.sbdemo.mybatisTest.entity;
 
 import java.io.Serializable;
-import java.util.Date;
 
-
-public class User  implements Serializable {
+public class User  implements Serializable{
+//public class User  implements Serializable,UserDetails{
 	private static final long serialVersionUID = 1L;
 	
 	private Integer id;    
@@ -46,5 +45,37 @@ public class User  implements Serializable {
 	public void setAge(Integer age) {
 		this.age = age;
 	}
-    
+
+//	@Override
+//	public Collection<? extends GrantedAuthority> getAuthorities() {
+//		// TODO Auto-generated method stub
+////		return Arrays. new SimpleGrantedAuthority("reader"));
+//		return null;
+//	}
+//
+//	@Override
+//	public boolean isAccountNonExpired() {
+//		// TODO Auto-generated method stub
+//		return false;
+//	}
+//
+//	@Override
+//	public boolean isAccountNonLocked() {
+//		// TODO Auto-generated method stub
+//		return false;
+//	}
+//
+//	@Override
+//	public boolean isCredentialsNonExpired() {
+//		// TODO Auto-generated method stub
+//		return false;
+//	}
+
+//	@Override
+//	public boolean isEnabled() {
+//		// TODO Auto-generated method stub
+//		return false;
+//	}
+
+	
 }

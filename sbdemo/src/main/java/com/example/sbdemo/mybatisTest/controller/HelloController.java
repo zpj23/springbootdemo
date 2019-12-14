@@ -22,9 +22,9 @@ public class HelloController {
 	@RequestMapping("/hello")
     public String hello(Model m) throws Exception {
         m.addAttribute("now", DateFormat.getDateTimeInstance().format(new Date()));
-        if(true){
-            throw new Exception("some exception");
-        }
+//        if(true){
+//            throw new Exception("some exception");
+//        }
         return "hello";
     }
 	
